@@ -205,6 +205,9 @@ window.web3gl.sendContract(method, abi, contract, args, value, gasLimit, gasPric
 */
 async function sendContract(method, abi, contract, args, value, gasLimit, gasPrice) {
   const from = (await web3.eth.getAccounts())[0];
+  console.log("sendContract:");
+  console.log(method);
+
   new web3.eth.Contract(JSON.parse(abi), contract).methods[method](...JSON.parse(args))
       .send({
         from,
@@ -219,9 +222,10 @@ async function sendContract(method, abi, contract, args, value, gasLimit, gasPri
         window.web3gl.sendContractResponse = error.message;
       })
       .on("receipt", function(receipt) {
-
+        console.log("on receipt");
+        console.log(method);
+        console.log(String(receipt));
         if ( method == "BattleMonstre"){
-          console.log(method);
           console.log(receipt.events.Result.returnValues);
           //const bigInt = require("big-integer");
           console.log("rythmbigint" + String(receipt.events.Result.returnValues.hash));
@@ -229,9 +233,26 @@ async function sendContract(method, abi, contract, args, value, gasLimit, gasPri
           console.log(receipt.events.Result.returnValues.opponOrAfter);
           // showDiffMon(Monstre,receipt.events.Result.returnValues.selfOrBefore);
           console.log(receipt.events.Result.returnValues.opponOrAfter);
-          console.log(String(receipt));
           window.unityInstance.SendMessage("JavascriptBridgeManager",
                                             "BattleRythm", 
+                                              String(receipt.events.Result.returnValues.won) + "+" +
+                                               String(receipt.events.Result.returnValues.hash) + "+" +
+                                                String(receipt.events.Result.returnValues.bit) + "+" +
+                                                 String(receipt.events.Result.returnValues.selfOrBefore) + "+" +
+                                                  String(receipt.events.Result.returnValues.opponOrAfter));
+        }
+        else if ( method == "startBattlePVPT1"){
+          window.unityInstance.SendMessage("JavascriptBridgeManager",
+                                            "PVPResult", 
+                                              String(receipt.events.Result.returnValues.won) + "+" +
+                                               String(receipt.events.Result.returnValues.hash) + "+" +
+                                                String(receipt.events.Result.returnValues.bit) + "+" +
+                                                 String(receipt.events.Result.returnValues.selfOrBefore) + "+" +
+                                                  String(receipt.events.Result.returnValues.opponOrAfter));
+        }
+        else if ( method == "BattleEthermonstre"){
+          window.unityInstance.SendMessage("JavascriptBridgeManager",
+                                            "PVEResult", 
                                               String(receipt.events.Result.returnValues.won) + "+" +
                                                String(receipt.events.Result.returnValues.hash) + "+" +
                                                 String(receipt.events.Result.returnValues.bit) + "+" +
@@ -241,6 +262,11 @@ async function sendContract(method, abi, contract, args, value, gasLimit, gasPri
         else if ( method == "trainsMonstre"){
           window.unityInstance.SendMessage("JavascriptBridgeManager",
                                             "TrainResult", 
+                                              String(receipt.events.StatChangedResult.returnValues.AfterMon) );
+        }
+        else if ( method == "feedsMonstre"){
+          window.unityInstance.SendMessage("JavascriptBridgeManager",
+                                            "FeedResult", 
                                               String(receipt.events.StatChangedResult.returnValues.AfterMon) );
         }
         
