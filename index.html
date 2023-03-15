@@ -7,34 +7,46 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
 
-    <p>    This is Alpha Version v1.0.2. For more stable experience, please use Text Base UI. When encounter bug, refresh webpage. </p>
-    <br>
-    <br>    New Player Guide:
-    <br>    1. Mint an Egg
-    <br>    &nbsp;&nbsp;a. Click on "Legandary Frog" at your starting location.
-    <br>    &nbsp;&nbsp;b. Select "Mint 1 Egg" or "Mint 5 egg".
-    <br>    &nbsp;&nbsp;c. Approve transaction in your cryto wallet.
-    <br>    2. Switch out your egg.
-    <br>    &nbsp;&nbsp;a. click second icon in sidebar at right hand side of the screen.
-    <br>    &nbsp;&nbsp;b. Select an egg at right hand side monstre's slider
-    <br>    &nbsp;&nbsp;c. Click "Switch to this monstre" button at below the screen.
-    <br>    3. Hatch the egg.
-    <br>    &nbsp;&nbsp;a. Click on the newly spawned egg incubitor.
-    <br>    &nbsp;&nbsp;b. Accept the pop up message.
-    <br>    &nbsp;&nbsp;c. Approve transaction in your cryto wallet.
-    <br>
-    <br>Warning: Known Issue #1
-    <br>&nbsp;Smart contract had code a rule that: 
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Same Monstre can only fight The Ether every 8 hours,
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; but Unity UI did not handle that,
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when same monstre attempting to attack more than once within 8 hours,
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unity UI will hang after this,
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pressing Skip and cancel button will exit from hang,
-    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this issue will be fixed as soon as possible.
-    
 
   </head>
   <body>
+
+    <div id="tutorial">
+      <p class="text">    This is Alpha Version v1.0.2. For more stable experience, please use Text Base UI. When encounter bug, refresh webpage.
+        <br>
+        <br>    New Player Guide:
+        <br>    1. Mint an Egg 
+        <br>    &nbsp;&nbsp;a. Click on "Legandary Frog" at your starting location.
+        <br>    &nbsp;&nbsp;b. Select "Mint 1 Egg" or "Mint 5 egg".
+        <br>    &nbsp;&nbsp;c. Approve transaction in your cryto wallet.
+        <br>    2. Switch out your egg.
+        <br>    &nbsp;&nbsp;a. click second icon in sidebar at right hand side of the screen.
+        <br>    &nbsp;&nbsp;b. Select an egg at right hand side monstre's slider
+        <br>    &nbsp;&nbsp;c. Click "Switch to this monstre" button at below the screen.
+        <br>    3. Hatch the egg.
+        <br>    &nbsp;&nbsp;a. Click on the newly spawned egg incubitor.
+        <br>    &nbsp;&nbsp;b. Accept the pop up message.
+        <br>    &nbsp;&nbsp;c. Approve transaction in your cryto wallet.
+        <br>
+        <br><u>Warning: </u>
+        <br> Known Issue #1
+        <br>&nbsp;Smart contract had code a rule that: 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Same Monstre can only fight The Ether every 8 hours,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; but Unity UI did not handle that,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when same monstre attempting to attack more than once within 8 hours,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Unity UI will hang after this,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; pressing Skip and cancel button will exit from hang,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this issue will be fixed as soon as possible.
+        <br>
+        <br> Known Issue #2
+        <br>&nbsp;All monstre species is display as Bipee, Hebe, Titandoa, Solanack: 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Due to unfinished artwork,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; all monstre species will be displayed as Bipee, Hebe, Titandoa, and Solanack,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and their skills will be displayed as appropriate,
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please use TextUI to view the actual monstre species.
+      </p>
+    </div>
+
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1280 height=720></canvas>
       <div id="unity-loading-bar">
