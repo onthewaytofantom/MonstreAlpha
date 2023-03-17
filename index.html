@@ -6,13 +6,11 @@
     <title>Unity WebGL Player | FantomMonstre</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-
-
   </head>
   <body>
-
+    
     <div id="tutorial">
-      <p class="text">    This is Alpha Version v1.0.2. For more stable experience, please use Text Base UI. When encounter bug, refresh webpage.
+      <p class="text">    This is Alpha Version v1.0.4.b. For more stable experience, please use Text Base UI. When encounter bug, refresh webpage.
         <br>
         <br>    New Player Guide:
         <br>    1. Mint an Egg 
@@ -44,8 +42,15 @@
         <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; all monstre species will be displayed as Bipee, Hebe, Titandoa, and Solanack,
         <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; and their skills will be displayed as appropriate,
         <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please use TextUI to view the actual monstre species.
+        <br>
+        <br> Known Issue #3
+        <br>&nbsp;Evolution after feed and battle is not happening: 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; when hit into this error, 
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; switch to other monstre and switch back.
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; will fix this ASAP.
       </p>
     </div>
+
 
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=1280 height=720></canvas>
@@ -96,11 +101,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build7.loader.js";
+      var loaderUrl = buildUrl + "/Build10.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build7.data",
-        frameworkUrl: buildUrl + "/Build7.framework.js",
-        codeUrl: buildUrl + "/Build7.wasm",
+        dataUrl: buildUrl + "/Build10.data",
+        frameworkUrl: buildUrl + "/Build10.framework.js",
+        codeUrl: buildUrl + "/Build10.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "FantomMonstre",
